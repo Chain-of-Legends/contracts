@@ -1,0 +1,57 @@
+const {
+  BN,           // Big Number support
+  constants,    // Common constants, like the zero address and largest integers
+  expectEvent,  // Assertions for emitted events
+  expectRevert, // Assertions for transactions that should fail
+} = require('@openzeppelin/test-helpers');
+const { web3 } = require('@openzeppelin/test-helpers/src/setup');
+
+const { expect } = require('chai');
+
+contract("ColNft", (accounts) => {
+  const [deployer, other] = accounts;
+  console.log("ACCOUNTS:".accounts);
+
+  before(async function () {
+    this.token = await require('../migrations/1_nft_migration.js.disable')();
+  });
+
+  describe('token attributes', function () {
+
+    it('has the correct name', async function () {
+      const name = await this.token.name();
+      expect(name).to.equal("Chain of Legends NFT");
+    });
+    it('has the correct symbols', async function () {
+      const symbol = await this.token.symbol();
+      expect(symbol).to.equal("CLNFT");
+    });
+
+    it('mint 100 boxes', async function () {
+      
+      var price = await this.token.getBnbBoxPrice(0);
+      console.log("minting Cobalt Boxes", price)
+      for (let i = 0; i < 251; i++){
+        await this.token.mintGenesisBox(0, { value: price });
+      }
+
+      price = await this.token.getBnbBoxPrice(1);
+      console.log("minting Pyrite Boxes", price)
+      for (let i = 0; i < 151; i++)
+        await this.token.mintGenesisBox(1, { value: price });
+
+      price = await this.token.getBnbBoxPrice(2);
+      console.log("minting Copper Boxes", price)
+      for (let i = 0; i < 76; i++)
+        await this.token.mintGenesisBox(2, { value: price });
+
+      price = await this.token.getBnbBoxPrice(3);
+      console.log("minting Gold Boxes", price)
+      for (let i = 0; i < 26; i++)
+        await this.token.mintGenesisBox(3, { value: price });
+
+      const totalSupply = await this.token.totalSupply();
+      expect(totalSupply).to.equal(500);
+    });
+  })
+})

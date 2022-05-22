@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script>
+
+    async function Initialize() {
+
+      if (typeof window.ethereum == 'undefined') {
+        return alert("Please Install MetaMask extention from google chrome store.")
+      }
+      
+      // Initialize web3 object
+      web3 = new Web3(window.ethereum);
+
+      // Connect Wallet function
+      await window.ethereum.enable();
+
+      // get List of connected wallets
+      accounts = await web3.eth.getAccounts();
+      console.log("Accounts: ", accounts);
+    }
+
+    Initialize();
+  </script>
+</body>
+
+</html>

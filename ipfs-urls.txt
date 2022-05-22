@@ -1,0 +1,40 @@
+Cobalt box
+https://bafybeiezppxfszjugenyi37bprrvbblfjwgm5fqoeozhwur63od3c4wj7a.ipfs.infura-ipfs.io/
+
+Pyrite box 
+https://bafybeicuaobgo3ufegckrjs77dezzcjyzumcl6dyeslt2vgjtkh453shli.ipfs.infura-ipfs.io/
+
+Copper box 
+https://bafybeidkvhmpbztlbilsxxhvwq73x6nilt3g6sj2ep6uiaqvezbdojh5ra.ipfs.infura-ipfs.io/
+
+Gold box
+https://bafybeifg5t35mkgdfspfmnwp6dopjc46f4fwng3tkm4lvbgjmnni4b743q.ipfs.infura-ipfs.io/
+
+
+Cobalt json
+https://bafybeibkaupdwmneofafho5zahnjbgm6zyt52pradamm4d3ygyuf7a33pi.ipfs.infura-ipfs.io/
+
+pyrite json
+https://bafybeieikt27cbzmnwg7lvh376wfyn663ssbackhx5qt2rh4ne42q2rhcu.ipfs.infura-ipfs.io/
+
+Copper json
+https://bafybeiht523ned5rl5sryikkld3y32lerodnlchymmkoojkelazsqbn6ua.ipfs.infura-ipfs.io/
+
+Gold Json
+https://bafybeiaxpr7hq2as7bveqpx3syk4onvd2sonfi7bsdbhcrlsdn3cnmukv4.ipfs.infura-ipfs.io/
+
+
+Desert Land
+https://bafybeiekdh6j5mzfvt66oxjf2kyn7f3tnv3x6ooxmyknk7xl43u2pavbwi.ipfs.infura-ipfs.io/
+
+Common Land
+https://bafybeihpmru2swo36d6iwuvfugco3tuqkkovxhaimsmyn54fusbcahnn6m.ipfs.infura-ipfs.io/
+
+Uncommon Land
+https://bafybeifuaflc3m4lkuczwexgtuhwm227kx76cpiyzkvbkyy6ivo4xhnf5i.ipfs.infura-ipfs.io/
+
+Rare Land
+https://bafybeigfmvxrlz6a7zhdc4znzk6opfq7sjggwhvqp2f5sc6crlcngj2toq.ipfs.infura-ipfs.io/
+
+Legendary Land
+https://bafybeiahiqhofcq5q5eowghb7xh4s5iu5bpp3hxmbovtngfdtih6rkz3nu.ipfs.infura-ipfs.io/
