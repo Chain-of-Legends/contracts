@@ -37,6 +37,8 @@ contract ColNft is Initializable, ERC721Upgradeable, OwnableUpgradeable, ERC721E
 
     mapping(address => uint) public lastBoxPurchase;
 
+    bool isCycle2Minted;
+
     //#region Duplicate defination overrides
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) 
       internal virtual override(ERC721Upgradeable, ERC721EnumerableUpgradeable) {
@@ -142,6 +144,40 @@ contract ColNft is Initializable, ERC721Upgradeable, OwnableUpgradeable, ERC721E
 
     function setBnbPrice(uint256 _bnbPrice) public onlyOwner {
         bnbPrice = _bnbPrice;
+    }
+
+    function mintGenesisBox(uint256 _boxId, string memory boxUrl)
+        public
+        onlyOwner
+        returns (uint256)
+    {
+      boxId = _boxId;
+      _safeMint(owner(), boxId);
+      _setTokenURI(boxId, boxUrl);
+      return boxId;
+    }
+
+    function mintGenesisBoxes(uint256 start, uint256 end)
+        public
+        onlyOwner
+        returns (uint256)
+    {
+      //require(boxId < 715 , "Cycle 2 boxes alreary minted"); 
+      require(start > 500 && start <= 715 && end >500 && end <= 715 && start <= end, "invalid numbers for start and end"); 
+      string memory _box_url;
+      for (uint256 i = start; i <= end; i++) {
+        if(i > 500 && i <= 600)
+          _box_url = "https://chainoflegends.com/assets/metadata/box-cobalt2.json";
+          if(i > 600 && i <= 670)
+          _box_url = "https://chainoflegends.com/assets/metadata/box-pyrite2.json";
+          if(i > 670 && i <= 700)
+          _box_url = "https://chainoflegends.com/assets/metadata/box-copper2.json";
+          if(i > 700 && i <= 715)
+          _box_url = "https://chainoflegends.com/assets/metadata/box-gold2.json";
+        mintGenesisBox(i, _box_url);
+      }
+
+      return boxId;
     }
 
     // function mintGenesisBox(genesisBoxType boxType)
