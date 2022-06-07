@@ -20,6 +20,7 @@
     "@nomiclabs/hardhat-web3": "^2.0.0",
     "@openzeppelin/test-helpers": "^0.5.15",
     "@truffle/hdwallet-provider": "^2.0.3",
+    "truffle-plugin-verify": "^0.5.25",
     "web3": "^1.7.0"
   }
 }

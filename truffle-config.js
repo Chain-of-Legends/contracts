@@ -25,6 +25,12 @@ const mnemonic = fs.readFileSync("test.secret").toString().trim(); // wallet add
 const mnemonic2 = fs.readFileSync("2.secret").toString().trim();
 
 module.exports = {
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    bscscan: 'WKYM6WJ37UWUWPT363IYYJXZRJY6CWD34K'
+  },
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle

@@ -1,6 +1,7 @@
 # Setup guide
     npm install
-
+    npm install truffle
+    npm install ganache
 # How to run
 
     truffle compile
@@ -12,25 +13,13 @@
 
 # How to Test
 This command will run tests under `test` folder 
-
     truffle test
 
-# Learning Resources
-1. 
----
 
-# To Do List
-* NFT Sale
-  * Box Details Page in nft sale Page
-  * BNB price of Boxes in NFT sale Page
-  * Start and End Date
-  * Stages with quanity (Diamond box, Gold box, and etc.)
-  * NFT Box Data (box type)
-  * Set and update totalSupply on mint and burn
-  * Token URI
-  * NFT Mapping to Address
-  * EVENTS
-* Crowdsale
-* Lock Liquidity
-* Bounty distribution
-* ~~Mint totalSupply in constructor~~
+# How to verify contract
+
+    truffle run verify tokenName@addressOnBlockChain --network networkName
+
+Example:
+
+    truffle run verify ColToken@0x4027d91eCD3140e53AE743d657549adfeEbB27AB --network bsc
