@@ -9,7 +9,7 @@ module.exports = async function (deployer) {
   var instance = null;
   
   try {
-    instance = await ColToken.at("0x4027d91eCD3140e53AE743d657549adfeEbB27AB");//"0xaa0ce9adaf3c473682b2bd12bd1d7a5195a1832e");//.deployed();
+    instance = await ColToken.at("0x4027d91eCD3140e53AE743d657549adfeEbB27AB");//,0x4027d91eCD3140e53AE743d657549adfeEbB27AB"0xaa0ce9adaf3c473682b2bd12bd1d7a5195a1832e");//.deployed();
   } catch (error) {
     console.log(error)
   }

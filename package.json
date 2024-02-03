@@ -9,12 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.4.2",
+    "@openzeppelin/contracts": "^4.9.5",
     "@openzeppelin/contracts-upgradeable": "^4.5.1",
     "@openzeppelin/truffle-upgrades": "^1.12.0",
     "chai": "^4.3.6",
     "express": "^4.17.3",
-    "npm": "^8.3.2"
+    "ganache": "^7.9.2",
+    "npm": "^8.3.2",
+    "truffle": "^5.11.5"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-web3": "^2.0.0",

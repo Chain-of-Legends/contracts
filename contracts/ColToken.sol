@@ -62,12 +62,14 @@ contract ColToken is
     {}
 
     function give(address to, uint256 amount) public onlyOwner{
+      super._approve(address(this), owner(), amount);
       transferFrom(address(this), to, amount);
     }
 
-    function distribute(address[] memory recepients, uint[] memory values) public onlyOwner{
+    function distribute(address[] memory recepients, uint[] memory values, uint sumValues) public onlyOwner{
       require(recepients.length > 0, "No recepient privided");
       require(recepients.length == values.length, "recepients count should be equal to values count");
+      super._approve(address(this), owner(), sumValues);
       for (uint256 i = 0; i < recepients.length; i++) {
         transferFrom(address(this),recepients[i], values[i]);
       }

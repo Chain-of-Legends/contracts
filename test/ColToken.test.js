@@ -52,7 +52,7 @@ contract("ColToken", (accounts) => {
       // this.token.approve(this.token.address,_giveAmount);
       // this.token.approve(owner,_giveAmount);
       // await this.token.twoSideApprove(owner, this.token.address, _giveAmount);
-      await this.token.twoSideApprove(this.token.address, owner , _giveAmount);
+      //await this.token.twoSideApprove(this.token.address, owner , _giveAmount);
       //console.log("allowance is ", +allowance);
       await this.token.give(owner, _giveAmount);
       const bal = await this.token.balanceOf(owner);
@@ -81,9 +81,9 @@ contract("ColToken", (accounts) => {
         totalDistribution = totalDistribution.add(values[i])
       }
       let owner = await this.token.owner();
-      await this.token.twoSideApprove(this.token.address, owner , totalDistribution);
+      //await this.token.twoSideApprove(this.token.address, owner , totalDistribution);
 
-      await this.token.distribute(receprients, values);
+      await this.token.distribute(receprients, values,totalDistribution);
       for (let i = 0; i < receprients.length; i++) {
         const bal = await this.token.balanceOf(receprients[i]);
         expect(+bal.toString()).to.equal(+values[i].toString());

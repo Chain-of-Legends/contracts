@@ -40,9 +40,9 @@ contract ColNft is Initializable, ERC721Upgradeable, OwnableUpgradeable, ERC721E
     bool isCycle2Minted;
 
     //#region Duplicate defination overrides
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId) 
+    function _beforeTokenTransfer(address from, address to, uint256 tokenId,uint256 batchSize) 
       internal virtual override(ERC721Upgradeable, ERC721EnumerableUpgradeable) {
-        super._beforeTokenTransfer(from, to, tokenId);
+        super._beforeTokenTransfer(from, to, tokenId,batchSize);
     }
 
     function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721EnumerableUpgradeable, ERC721Upgradeable) returns (bool) {
@@ -179,6 +179,21 @@ contract ColNft is Initializable, ERC721Upgradeable, OwnableUpgradeable, ERC721E
 
       return boxId;
     }
+
+    // function mintTestBoxes(address boxReceiver)
+    //     public
+    //     onlyOwner
+    // {
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-cobalt.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-pyrite.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-copper.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-gold.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-cobalt2.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-pyrite2.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-copper2.json"); 
+    //   _safeMint(boxReceiver, ++boxId); _setTokenURI(boxId,"https://chainoflegends.com/assets/metadata/box-gold2.json"); 
+    // }
+
 
     // function mintGenesisBox(genesisBoxType boxType)
     //     public

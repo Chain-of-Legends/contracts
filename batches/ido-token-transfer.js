@@ -8,25 +8,24 @@ const { web3 } = require('@openzeppelin/test-helpers/src/setup');
 
 module.exports = async function (deployer) {
   const ColToken = artifacts.require('ColToken');
-  var instance = await ColToken.at("0x4027d91eCD3140e53AE743d657549adfeEbB27AB");
+  var instance = await ColToken.at("0x4027d91eCD3140e53AE743d657549adfeEbB27AB");//0x4027d91eCD3140e53AE743d657549adfeEbB27AB");
   
-  var expectedBalance = web3.utils.toWei("799125006");
-  var giveAmount = web3.utils.toWei("6250000");
+  //var expectedBalance = web3.utils.toWei("799125006");
+  var giveAmount = web3.utils.toWei("613000000");
   var owner = await instance.owner();
-  var bal = await instance.balanceOf(instance.address);
-  console.log("Owner: ", owner, " Balance: ", +bal);
-  if (+bal == expectedBalance){
-    await instance.twoSideApprove(instance.address, owner, giveAmount);
+  //var bal = await web3.utils.fromWei( instance.balanceOf(instance.address));
+  //console.log("Owner: ", owner, " Balance: ", +bal);
+  //if (+bal == expectedBalance){
     await instance.give(owner, giveAmount);
-  }
-  else {
-    console.log("this balance is not expected")
-  }
+  // }
+  // else {
+  //   console.log("this balance is not expected")
+  // }
 
   console.log("Deployed. Address: ", instance.address, 
     "\n Name: ", await instance.name(),
     "\n Owner: ", await instance.owner(),
     "\n Owner Balance: ", +(await instance.balanceOf(await instance.owner())),
-    "\n Owner Balance: ", +(await instance.balanceOf(instance.address)));
+    "\n Contract Balance: ", +(await instance.balanceOf(instance.address)));
   return instance;
 }

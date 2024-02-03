@@ -11,7 +11,7 @@ module.exports = async function (deployer, network) {
   if (network == "bsc")
     contractAddress = "0xdF710790ca64B4074366D9ce8d29d4D435a251f4";
   // else if (network == "testnet")
-  //   contractAddress = "0x7E8C6850082B8c4331fE2f777D6bE3A8A06AB0e1"
+  //   contractAddress = "0x3c861bbd25e41a25da177ddf456c84392e16ab27"
   else if (network == "development")
     contractAddress = "0xc45720B0C82527bF45d479B650eeD32c1E3B0D4F";
 

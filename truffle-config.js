@@ -86,6 +86,22 @@ module.exports = {
       networkCheckTimeout:60000,
       skipDryRun: true
     },
+    coinexTestnet: {
+      provider: () => new HDWalletProvider(mnemonic, `https://testnet-rpc.coinex.net`),
+      network_id: 53,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      networkCheckTimeout:60000,
+      skipDryRun: true
+    },
+    coinex: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc.coinex.net`),
+      network_id: 52,
+      confirmations: 10,
+      timeoutBlocks: 200,
+      networkCheckTimeout:60000,
+      skipDryRun: true
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

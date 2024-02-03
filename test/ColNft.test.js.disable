@@ -13,7 +13,7 @@ contract("ColNft", (accounts) => {
   console.log("ACCOUNTS:".accounts);
 
   before(async function () {
-    this.token = await require('../migrations/1_nft_migration.js.disable')();
+    this.token = await require('../migrations/1_nft_migration.js')();
   });
 
   describe('token attributes', function () {
@@ -25,6 +25,13 @@ contract("ColNft", (accounts) => {
     it('has the correct symbols', async function () {
       const symbol = await this.token.symbol();
       expect(symbol).to.equal("CLNFT");
+    });
+
+    it('giving test nfts', async function () {
+      await this.token.mintTestBoxes("0x45aB41a6904De61Ea2334E21Ccd5AF603631869c");
+      var bal = await this.token.balanceOf("0x45aB41a6904De61Ea2334E21Ccd5AF603631869c");
+      console.log("NFTs: ", bal);
+      expect(bal).to.equal(8);
     });
 
     it('mint 100 boxes', async function () {
